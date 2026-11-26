@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <AssemblyName>obhod-setup</AssemblyName>
+    <RootNamespace>ObhodSetup</RootNamespace>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <Version>1.1.0</Version>
+    <ObhodReleaseRepository Condition="'$(ObhodReleaseRepository)' == ''">kirill2281338/obhod</ObhodReleaseRepository>
+    <Product>обход — установщик</Product>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Runtime.Serialization" />
+    <AssemblyMetadata Include="ObhodReleaseRepository" Value="$(ObhodReleaseRepository)" />
+    <EmbeddedResource Include="payload.zip" LogicalName="payload.zip" />
+    <EmbeddedResource Include="logo.png" LogicalName="logo.png" />
+    <EmbeddedResource Include="Fonts/Oswald-SemiBold.ttf" LogicalName="Oswald-SemiBold.ttf" />
+    <EmbeddedResource Include="Fonts/Manrope-Regular.ttf" LogicalName="Manrope-Regular.ttf" />
+    <EmbeddedResource Include="Fonts/Manrope-Bold.ttf" LogicalName="Manrope-Bold.ttf" />
+  </ItemGroup>
+</Project>
